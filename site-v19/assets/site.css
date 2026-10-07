@@ -98,16 +98,16 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 .btn-ghost:hover{color:var(--forest-soft)}
 .more{color:var(--forest);font-weight:600;text-decoration:none;border-bottom:1px solid var(--champagne)}
 .more::after{content:" ←"}
-.trust{list-style:none;margin-top:24px;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:15px;color:var(--muted)}
-.trust li{position:relative;padding-inline-start:14px}
-.trust li::before{content:"";position:absolute;right:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--champagne)}
+/* שורת אמון: פסקה אחת, בלי מפרידים */
+.trust{margin-top:24px;font-size:16px;color:var(--muted);max-width:56ch}
 
 /* ---------- sections ---------- */
 section{padding:60px 0;border-top:1px solid var(--line)}
 section h2{font-size:clamp(28px,4vw,38px);margin-bottom:22px;max-width:24ch}
 .lede{color:var(--text);max-width:60ch}
 .lines p{max-width:62ch}
-.lines p + p{margin-top:6px}
+.lines p + p{margin-top:14px}
+.byline{font-size:15px;font-weight:600;color:var(--champagne-ink);margin:-14px 0 14px}
 .tinted{background:var(--ivory)}
 .section-foot{margin-top:26px}
 
@@ -133,7 +133,6 @@ section h2{font-size:clamp(28px,4vw,38px);margin-bottom:22px;max-width:24ch}
 .plain-list{list-style:none;max-width:640px}
 .plain-list li{padding:12px 0;border-bottom:1px solid var(--line)}
 .plain-list li:first-child{border-top:1px solid var(--line)}
-.plain-list .hint{display:block;color:var(--muted);font-size:16px}
 
 .qa{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
 .qa h3{margin-bottom:8px}
@@ -157,6 +156,7 @@ section h2{font-size:clamp(28px,4vw,38px);margin-bottom:22px;max-width:24ch}
 .faq summary::after{content:"+";color:var(--champagne);font-family:var(--serif);font-size:24px;line-height:1}
 .faq details[open] summary::after{content:"–"}
 .faq .ans{padding:0 0 18px;color:var(--text)}
+.faq .ans p{max-width:62ch}
 
 /* ביקורות */
 .rating-line{font-family:var(--serif);color:var(--forest);font-size:20px;margin:-12px 0 28px}
@@ -225,7 +225,7 @@ section h2{font-size:clamp(28px,4vw,38px);margin-bottom:22px;max-width:24ch}
 .section-label{display:inline-block;font-size:14px;font-weight:600;letter-spacing:.06em;color:var(--warn);margin-bottom:8px}
 .info-box{background:var(--ivory);border-right:3px solid var(--forest);border-radius:3px;padding:16px 20px;margin:20px 0}
 .info-box p{margin:0;font-size:17px}
-.info-box p + p{margin-top:4px}
+.info-box p + p{margin-top:10px}
 .warning{background:#FBF3E8;border-right:3px solid var(--warn);border-radius:3px;padding:16px 20px;margin:20px 0}
 .warning-title{font-weight:700;color:var(--warn);margin-bottom:6px}
 .warning p{margin:0}
@@ -318,11 +318,12 @@ section h2{font-size:clamp(28px,4vw,38px);margin-bottom:22px;max-width:24ch}
   .cta-row{margin-top:20px;gap:6px}                /* 36 / 14 */
   .btn{padding:14px 24px}
   .btn-ghost{padding:9px 4px}                      /* 15 */
-  .trust{margin-top:14px;gap:4px 16px}             /* 28 */
+  .trust{margin-top:14px}                          /* 28 */
   section{padding:34px 0}                          /* 56 */
   section h2{margin-bottom:14px}                   /* 28 */
   .section-foot{margin-top:18px}                   /* 32 */
-  .lines p + p{margin-top:4px}
+  .lines p + p{margin-top:10px}
+  .byline{margin:-8px 0 10px}
   .checks,.flow,.about,.reviews,.qa,.results,.calc-fields,.direct{grid-template-columns:1fr;gap:18px} /* 28 */
   .checks h3,.qa h3{margin-bottom:2px}             /* 8 */
   .flow.vertical{gap:18px}

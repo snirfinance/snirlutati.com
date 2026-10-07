@@ -75,7 +75,7 @@
     ck = document.createElement("div");
     ck.className = "ck"; ck.id = "ck"; ck.hidden = true;
     ck.setAttribute("role","region"); ck.setAttribute("aria-label","הגדרות עוגיות");
-    ck.innerHTML = '<div class="ck-in"><p>האתר משתמש בעוגייה חיונית, ובאישורך גם בפיקסל של מטא, כדי לדעת אילו מודעות מביאות פניות <a href="/privacy/">מדיניות הפרטיות</a></p>'+
+    ck.innerHTML = '<div class="ck-in"><p>האתר משתמש בעוגייה חיונית, ובאישורך גם בפיקסל של מטא, כדי לדעת אילו מודעות מביאות פניות. <a href="/privacy/">מדיניות הפרטיות</a></p>'+
       '<div class="ck-btns"><button type="button" class="ck-yes">מאשר</button><button type="button" class="ck-no">רק חיוניות</button></div></div>';
     document.body.appendChild(ck);
     ck.querySelector(".ck-yes").addEventListener("click",function(){ choose("granted"); });
@@ -161,16 +161,16 @@
           .then(function(r){
             busy = false;
             if(r.ok){
-              if(s) s.textContent = "קיבלתי, אחזור אליך עד יום עסקים";
+              if(s) s.textContent = "קיבלתי, אחזור אליך עד יום עסקים.";
               f.reset();
               if(af) af.value = angleLabel;
               if(uf) uf.value = utm;
               track("Lead");
-            } else if(s){ s.textContent = "השליחה לא עברה\nנסה שוב או שלח לי וואטסאפ"; }
+            } else if(s){ s.textContent = "השליחה לא עברה. נסה שוב, או שלח לי וואטסאפ."; }
           })
           .catch(function(){
             busy = false;
-            if(s) s.textContent = "אין חיבור כרגע\nנסה שוב או שלח לי וואטסאפ";
+            if(s) s.textContent = "אין חיבור כרגע. נסה שוב, או שלח לי וואטסאפ.";
           });
       });
     })(forms[j]);
