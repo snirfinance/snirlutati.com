@@ -65,14 +65,16 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 .hero-split{display:grid;grid-template-columns:1.3fr .7fr;gap:48px;align-items:end}
 .hero-split.with-shot{align-items:start}
 .hero-photo{background:linear-gradient(180deg,var(--ivory),var(--paper));border-bottom:2px solid var(--champagne)}
-.hero-photo img{margin:0 auto;max-width:320px}
+.hero-photo img{margin:0 auto;max-width:320px;mix-blend-mode:multiply}
 
-/* מקום לתמונה של שניר: מסגרת 4:5 קבועה. התמונה היא /assets/snir.webp (להחלפה: לדרוס את הקובץ). אם לא נטענת, מוצג את ה-placeholder בלי שינוי קוד */
-.photo-slot{position:relative;aspect-ratio:4/5;width:100%;max-width:340px;margin:0;overflow:hidden;
-  background:var(--ivory);border:1px solid var(--line);border-bottom:2px solid var(--champagne);border-radius:4px}
-.photo-slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+/* תמונות של שניר: snir-portrait.jpg (4:5) ב-hero, snir-square.jpg (1:1) ב"מי בודק". הרקע הלבן נבלע ברקע האתר עם multiply. אם תמונה לא נטענת, מוצג placeholder */
+.photo-slot{position:relative;aspect-ratio:4/5;width:100%;max-width:340px;margin:0;overflow:hidden}
+.photo-slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%;mix-blend-mode:multiply}
+.who-shot{aspect-ratio:1/1}
+.photo-slot:has(img) .photo-ph{display:none}
 .photo-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
-  color:var(--muted);font-size:14px;text-align:center}
+  color:var(--muted);font-size:14px;text-align:center;
+  background:var(--ivory);border:1px solid var(--line);border-bottom:2px solid var(--champagne);border-radius:4px}
 .photo-ph svg{width:30px;height:30px;stroke:var(--champagne-ink)}
 .hero-shot{justify-self:end}
 .who-shot{float:left;width:180px;margin:6px 24px 12px 0}
