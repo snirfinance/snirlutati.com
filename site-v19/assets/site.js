@@ -4,7 +4,7 @@
   "use strict";
 
   /* ---- הגדרות ---- */
-  var PIXEL_ID = "PIXEL_ID";          /* שניר משלים. עד אז הפיקסל לא נטען בכלל */
+  var PIXEL_ID = "28130430473323294"; /* נטען רק אחרי "מאשר" בבאנר */
   var CONSENT_KEY = "snl_consent_v2"; /* מפתח חדש (לא snl_ck_v1), כדי שכולם יראו את הבאנר החדש */
   var WA_NUMBER = "972502440626";
   var ANGLES = window.ANGLES || {};
