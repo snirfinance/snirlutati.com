@@ -3,3 +3,5 @@
 /hisachon-lechol-yeled/*  /   301
 /chufshat-leda-le-av      /   301
 /chufshat-leda-le-av/*    /   301
+
+# הטופס lead שולח POST ל-"/" (Netlify Forms). אסור להוסיף כלל שתופס את "/" או "/*"
