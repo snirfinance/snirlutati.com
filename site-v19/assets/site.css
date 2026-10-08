@@ -301,13 +301,14 @@ section h2{font-size:clamp(28px,4vw,38px);margin-bottom:22px;max-width:24ch}
   .hero p.sub{margin-top:10px}                     /* 20 */
   .hero-split{grid-template-columns:1fr;gap:18px}  /* 28 */
   .hero-photo img{max-width:240px}
-  /* hero של דף הבית: כותרת, תת-כותרת, תמונה 200x250 במרכז, ואז התלוש */
+  /* hero של דף הבית: כותרת, תת-כותרת, כפתורים (גלויים בלי גלילה), תמונה 200x250 במרכז, ואז התלוש */
   .hero-split.with-shot{grid-template-columns:1fr;gap:0;align-items:start}
   .with-shot > .hero-main{display:contents}
   .with-shot > .hero-main > *{grid-column:1/-1}
   .with-shot > .hero-main > h1{grid-row:1}
   .with-shot > .hero-main > .sub{grid-row:2}
-  .with-shot > .hero-shot{grid-column:1/-1;grid-row:3;width:200px;max-width:none;margin:18px auto 0;justify-self:center}
+  .with-shot > .hero-main > .cta-row{grid-row:3}
+  .with-shot > .hero-shot{grid-column:1/-1;grid-row:4;width:200px;max-width:none;margin:18px auto 0;justify-self:center}
   .hero-shot .photo-ph span{display:none}
   .hero-shot .photo-ph svg{width:24px;height:24px}
   .who-shot{width:120px;margin:4px 16px 8px 0}
