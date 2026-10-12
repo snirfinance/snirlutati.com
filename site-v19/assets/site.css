@@ -373,3 +373,15 @@ section h2{font-size:clamp(28px,4vw,38px);margin-bottom:22px;max-width:24ch}
   .brand .name{font-size:18px}
   .top-wa{padding:6px 10px;font-size:15px}
 }
+
+/* ---------- אנימציות (motion.js) ---------- */
+/* ספרות ברוחב קבוע, כדי שהמספר לא "ירקוד" בזמן הספירה */
+.slip-row .v,.num{font-variant-numeric:tabular-nums}
+.num{white-space:nowrap}
+.slip-row.gap{border-radius:2px}
+
+/* ---------- גלילה חלקה (Lenis) ---------- */
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+.lenis.lenis-stopped{overflow:hidden}
