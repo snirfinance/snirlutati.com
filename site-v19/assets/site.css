@@ -33,7 +33,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
   border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
 @supports (backdrop-filter:blur(8px)){.site-header{background:rgba(251,250,245,.85);backdrop-filter:blur(10px)}}
 .hdr{display:flex;align-items:center;gap:24px;height:68px}
-.brand{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.brand .mark{width:34px;height:34px;display:block}
 .brand .name{font-family:var(--serif);font-size:22px;color:var(--forest);font-weight:700}
 .main-nav{display:flex;gap:24px;margin-inline-start:auto}
 .main-nav a{text-decoration:none;color:var(--ink);font-size:16px;padding:4px 0;border-bottom:2px solid transparent;white-space:nowrap}
