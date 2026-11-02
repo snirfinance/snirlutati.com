@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>בדיקת קרן פנסיה | שניר לוטטי</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700;900&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#1E3A2F; --paper:#FBF9F4; --ivory:#F6F1E6; --champagne:#C8B48C;
+  --ink:#1B211E; --muted:#56605A; --line:#E2DACB; --field:#FFFFFF;
+  --serif:"Frank Ruhl Libre", Georgia, serif; --sans:"Assistant", Arial, sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){color-scheme:dark; --paper:#121A16; --ivory:#18231D; --ink:#EEE8DC; --muted:#AEB7AF; --line:#2C3A32; --field:#1C2922}
+}
+:root[data-theme="dark"]{color-scheme:dark; --paper:#121A16; --ivory:#18231D; --ink:#EEE8DC; --muted:#AEB7AF; --line:#2C3A32; --field:#1C2922}
+*,*::before,*::after{box-sizing:inherit}
+html,body{min-height:100%}
+body{margin:0; background:var(--ivory); color:var(--ink); font-family:var(--sans); font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased}
+:focus-visible{outline:3px solid var(--champagne); outline-offset:3px}
+
+.top{background:var(--forest); color:#F6F1E6; text-align:center; padding:36px 20px 96px}
+.top .brand{font-family:var(--serif); font-weight:700; font-size:20px}
+.top .partner{display:block; font-size:14px; color:#C9CFC6; margin-top:2px}
+.top h1{font-family:var(--serif); font-weight:900; font-size:clamp(30px,6vw,44px); line-height:1.15; margin:28px auto 12px; max-width:15em}
+.top p{margin:0 auto; max-width:30em; color:#D9D3C4; font-size:18px}
+
+.card{background:var(--paper); max-width:520px; margin:-64px auto 0; border-radius:10px; padding:32px 28px; position:relative; box-shadow:0 1px 0 var(--line)}
+.field{display:flex; flex-direction:column; gap:6px; margin-bottom:16px}
+.field label{font-weight:600; font-size:16px}
+.opt{font-weight:400; color:var(--muted)}
+.field input,.field select{font:inherit; color:var(--ink); background:var(--field); border:1px solid var(--line); border-radius:6px; padding:12px 14px; min-height:50px; width:100%}
+.field input:focus,.field select:focus{outline:none; border-color:var(--forest); box-shadow:0 0 0 3px rgba(200,180,140,.45)}
+.ltr{direction:ltr; text-align:right}
+.consent{display:flex; gap:10px; align-items:flex-start; font-size:14px; color:var(--muted); margin:4px 0 20px}
+.consent input{width:22px; height:22px; margin-top:2px; flex:none; accent-color:var(--forest)}
+.btn{width:100%; min-height:54px; border:0; border-radius:6px; background:var(--forest); color:#F6F1E6; font:700 18px var(--sans); cursor:pointer}
+.btn:hover{background:#2A4D3F}
+.btn:disabled{opacity:.7; cursor:default}
+.err{color:#B4402F; font-size:15px; margin:10px 0 0; min-height:1em}
+.trust{display:flex; justify-content:center; flex-wrap:wrap; gap:6px 20px; font-size:14px; color:var(--muted); margin-top:16px}
+.thanks{display:none; text-align:center; padding:20px 0}
+.thanks h2{font-family:var(--serif); font-size:28px; margin:0 0 8px}
+.thanks p{color:var(--muted); margin:0}
+.card.done form{display:none}
+.card.done .thanks{display:block}
+.hidden{position:absolute; left:-9999px}
+
+.about{max-width:520px; margin:28px auto 0; padding:0 24px; font-size:15px; color:var(--muted); text-align:center}
+footer{text-align:center; font-size:14px; color:var(--muted); padding:28px 20px 40px}
+footer a{color:inherit}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">שניר לוטטי</div>
+  <span class="partner">בשיתוף ידע שווה כסף</span>
+  <h1>רוצה לדעת מה באמת קורה בקרן הפנסיה שלך?</h1>
+  <p>השאר פרטים ואחזור אליך לשיחה קצרה. נקבע בדיקה של הקרן, בלי עלות ובלי התחייבות.</p>
+</header>
+
+<main>
+<div class="card" id="card">
+  <form name="webinar-pension" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="leadForm" novalidate>
+    <input type="hidden" name="form-name" value="webinar-pension">
+    <input type="hidden" name="source" value="וובינר ידע שווה כסף">
+    <p class="hidden"><label>לא למלא <input name="bot-field"></label></p>
+
+    <div class="field">
+      <label for="name">שם מלא</label>
+      <input id="name" name="name" type="text" autocomplete="name" required>
+    </div>
+    <div class="field">
+      <label for="phone">טלפון</label>
+      <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" class="ltr" required>
+    </div>
+    <div class="field">
+      <label for="email">אימייל <span class="opt">(לא חובה)</span></label>
+      <input id="email" name="email" type="email" autocomplete="email" class="ltr">
+    </div>
+    <div class="field">
+      <label for="calltime">מתי נוח לדבר?</label>
+      <select id="calltime" name="calltime">
+        <option>בוקר</option>
+        <option>צהריים</option>
+        <option>ערב</option>
+      </select>
+    </div>
+    <label class="consent">
+      <input type="checkbox" name="consent" id="consent" value="yes" required>
+      <span>אני מאשר/ת ששניר לוטטי יצור איתי קשר בנוגע לבדיקת הפנסיה שלי.</span>
+    </label>
+    <button class="btn" type="submit" id="submitBtn">אני רוצה שתחזור אליי</button>
+    <p class="err" id="err" role="alert"></p>
+    <div class="trust"><span>5.0 בגוגל, 20 ביקורות</span><span>חוזר תוך יום עסקים</span></div>
+  </form>
+  <div class="thanks" role="status" aria-live="polite">
+    <h2>תודה, קיבלתי</h2>
+    <p>אחזור אליך תוך יום עסקים אחד לתיאום.</p>
+  </div>
+</div>
+
+<p class="about">סוכן ביטוח ופנסיה עצמאי, לשעבר ראש צוות תביעות אובדן כושר עבודה בחברת ביטוח גדולה. B.A כלכלה ו-MBA.</p>
+</main>
+
+<footer>
+  רישיון L-00138141 | <a href="tel:0502440626">050-244-0626</a> | <a href="mailto:snir@snirl-ins.com">snir@snirl-ins.com</a>
+</footer>
+
+<script>
+(function(){
+  // הדבק כאן את כתובת ה-Web App של Google Apps Script
+  var SHEET_URL='https://script.google.com/macros/s/AKfycbyx1AxislOh-zgde2VCvQl7unFNk__ueAK3AutP-8US3BqErWJlMGqbnEE0nHZn15J5zA/exec';
+  var f=document.getElementById('leadForm'), card=document.getElementById('card'),
+      err=document.getElementById('err'), btn=document.getElementById('submitBtn');
+  f.addEventListener('submit',function(e){
+    e.preventDefault(); err.textContent='';
+    var ph=f.phone.value.replace(/\D/g,''), em=f.email.value.trim();
+    if(!f.name.value.trim()) return fail('צריך למלא שם מלא.',f.name);
+    if(ph.length<9||ph.length>10) return fail('מספר הטלפון לא תקין. צריך 9–10 ספרות.',f.phone);
+    if(em && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) return fail('כתובת האימייל לא תקינה.',f.email);
+    if(!f.consent.checked) return fail('כדי שאוכל לחזור אליך, צריך לאשר יצירת קשר.',f.consent);
+    btn.disabled=true; btn.textContent='שולח…';
+    var body=new URLSearchParams(new FormData(f)).toString();
+    var toSheet=SHEET_URL.indexOf('http')===0
+      ? fetch(SHEET_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body}).catch(function(){})
+      : Promise.resolve();
+    var toNetlify=fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body});
+    Promise.all([toNetlify,toSheet])
+    .then(function(r){ if(!r[0].ok) throw 0; card.classList.add('done'); })
+    .catch(function(){ btn.disabled=false; btn.textContent='אני רוצה שתחזור אליי';
+      err.textContent='הפרטים לא נשלחו. נסו שוב, או התקשרו ל-050-244-0626.'; });
+  });
+  function fail(m,el){ err.textContent=m; el.focus(); return false; }
+})();
+</script>
+</body>
+</html>
