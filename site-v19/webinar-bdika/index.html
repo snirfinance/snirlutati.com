@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>הצעד הבא: בדיקה אישית | שניר לוטטי</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700;900&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#1E3A2F; --forest-soft:#2C4F41; --paper:#FBFAF5; --ivory:#F5F1E6; --champagne:#C9B48A;
+  --champagne-ink:#7A6338; --ink:#18201C; --muted:#3F4943; --line:#E3DCCB;
+  --serif:"Frank Ruhl Libre", Georgia, serif; --sans:"Assistant", Arial, sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0; background:var(--ivory); color:var(--ink); font-family:var(--sans); font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased; padding-bottom:env(safe-area-inset-bottom,0px)}
+:focus-visible{outline:3px solid var(--champagne); outline-offset:3px}
+
+.top{background:var(--forest); color:var(--ivory); text-align:center; padding:36px 20px 96px; padding-top:calc(36px + env(safe-area-inset-top,0px))}
+.brand{display:inline-flex; align-items:center; gap:10px; font-family:var(--serif); font-weight:700; font-size:21px}
+.brand img{width:34px; height:34px}
+.top h1{font-family:var(--serif); font-weight:900; font-size:clamp(30px,6vw,46px); line-height:1.15; margin:26px auto 12px; max-width:14em}
+.top p{margin:0 auto; max-width:30em; color:#D9D2BF; font-size:18px}
+
+main{max-width:760px; margin:-64px auto 0; padding:0 16px}
+.step{background:var(--paper); border-radius:12px; padding:28px 24px; box-shadow:0 1px 0 var(--line); margin-bottom:20px; transition:opacity .3s}
+.step-head{display:flex; align-items:center; gap:14px; margin-bottom:8px}
+.num{flex:none; width:40px; height:40px; border-radius:50%; background:var(--forest); color:var(--ivory); display:grid; place-items:center; font-weight:700; font-size:19px}
+.step h2{font-family:var(--serif); font-size:26px; line-height:1.25; margin:0; color:var(--forest)}
+.step > p{margin:0 0 18px; color:var(--muted)}
+.calendly-inline-widget{min-width:280px; height:700px; border-radius:8px; overflow:hidden; background:#fff}
+
+.booked{display:none; align-items:center; gap:10px; background:#EAF0EA; color:var(--forest); border-radius:8px; padding:14px 16px; font-weight:700}
+.is-booked .booked{display:flex}
+.is-booked .calendly-inline-widget{display:none}
+.is-booked .num.one{background:var(--champagne); color:var(--forest)}
+
+.step.two{opacity:.75}
+.is-booked .step.two{opacity:1; box-shadow:0 0 0 3px var(--champagne)}
+.why{list-style:none; padding:0; margin:0 0 20px; display:grid; gap:8px}
+.why li{display:flex; gap:10px; align-items:flex-start; color:var(--ink)}
+.why li::before{content:""; flex:none; width:8px; height:8px; border-radius:50%; background:var(--champagne); margin-top:10px}
+.btn{display:flex; align-items:center; justify-content:center; width:100%; min-height:56px; border-radius:8px; background:var(--forest); color:var(--ivory); font:700 19px var(--sans); text-decoration:none}
+.btn:hover{background:var(--forest-soft)}
+.note{font-size:14px; color:var(--muted); text-align:center; margin:12px 0 0}
+
+.done-all{display:none; text-align:center; padding:8px 0 0}
+.done-all h2{font-family:var(--serif); color:var(--forest); font-size:26px; margin:0 0 6px}
+.done-all p{margin:0; color:var(--muted)}
+.is-filled .done-all{display:block}
+
+footer{text-align:center; font-size:14px; color:var(--muted); padding:20px 20px 40px}
+footer a{color:inherit}
+@media (max-width:520px){.step{padding:22px 16px}.calendly-inline-widget{height:760px}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="brand"><img src="/assets/logo-mark-light.svg" alt="" width="34" height="34">שניר לוטטי</div>
+  <h1>תודה שהיית איתי. עכשיו הבדיקה האישית שלך.</h1>
+  <p>שני צעדים קצרים, ואני מגיע לפגישה כשכל הנתונים שלך כבר מולי.</p>
+</header>
+
+<main id="flow">
+  <section class="step one" aria-labelledby="s1">
+    <div class="step-head"><span class="num one" aria-hidden="true">1</span><h2 id="s1">בוחרים מועד לפגישה</h2></div>
+    <p>45 דקות, בזום או פנים מול פנים. בלי עלות ובלי התחייבות.</p>
+    <div class="booked" role="status" aria-live="polite">✓ הפגישה נקבעה. אישור נשלח אליך למייל.</div>
+    <div class="calendly-inline-widget" data-url="https://calendly.com/snir-snirl-ins/meet-with-me?hide_gdpr_banner=1&amp;primary_color=1e3a2f&amp;utm_source=webinar"></div>
+  </section>
+
+  <section class="step two" id="step2" aria-labelledby="s2">
+    <div class="step-head"><span class="num" aria-hidden="true">2</span><h2 id="s2">מאשרים לי לראות את הנתונים</h2></div>
+    <p>טופס קצר של המסלקה הפנסיונית. כך אני מקבל תמונה מלאה של כל הקופות שלך, כולל קופות ישנות שאולי שכחת מהן.</p>
+    <ul class="why">
+      <li>לוקח כ-3 דקות, צריך רק תעודת זהות</li>
+      <li>אני רואה את הנתונים, לא יכול להזיז שקל</li>
+      <li>עיבוד הנתונים לוקח 2 ימי עבודה, לכן כדאי למלא עכשיו</li>
+    </ul>
+    <a class="btn" id="surenseBtn" href="https://surense.com/app/p/qNfXJs9" target="_blank" rel="noopener">למילוי טופס המסלקה ←</a>
+    <p class="note">הטופס נפתח בחלון חדש, במערכת המאובטחת של Surense</p>
+    <div class="done-all" role="status" aria-live="polite">
+      <h2>מעולה, נתראה בפגישה</h2>
+      <p>אם עולה שאלה עד אז: <a href="https://wa.me/972502440626">וואטסאפ 050-244-0626</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  שניר לוטטי · סוכן ביטוח פנסיוני · רישיון L-00138141 · <a href="/">snirlutati.com</a>
+</footer>
+
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>
+(function(){
+  var flow = document.getElementById('flow');
+  var step2 = document.getElementById('step2');
+  window.addEventListener('message', function(e){
+    if (e.origin !== 'https://calendly.com') return;
+    if (e.data && e.data.event === 'calendly.event_scheduled'){
+      flow.classList.add('is-booked');
+      setTimeout(function(){ step2.scrollIntoView({behavior:'smooth', block:'start'}); }, 400);
+    }
+  });
+  document.getElementById('surenseBtn').addEventListener('click', function(){
+    setTimeout(function(){ flow.classList.add('is-filled'); }, 800);
+  });
+})();
+</script>
+</body>
+</html>
